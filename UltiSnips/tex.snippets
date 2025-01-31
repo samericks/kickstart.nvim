@@ -1,0 +1,276 @@
+global !p
+def math():
+  return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+endglobal
+
+snippet minprob "Minimization problem" A
+\[
+    \begin{array}{ll} 
+	\mbox{minimize}   & $1 \\\ 
+	\mbox{subject to} & $2 
+    \end{array}
+\]$0
+    
+endsnippet
+
+snippet maxprob "Maximization problem" A
+\[
+    \begin{array}{ll} 
+	\mbox{maximize}   & $1 \\\ 
+	\mbox{subject to} & $2 
+    \end{array}
+\]$0
+    
+endsnippet
+
+snippet template "Basic template" b
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+
+\input{defs.tex}
+
+\title{$0}
+\author{Samuel Erickson}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+    
+\end{abstract}
+
+\section{Introduction}
+
+\end{document}
+
+endsnippet
+
+context "math()"
+snippet f "Fraction simple" i
+\frac{$1}{$2}$0
+endsnippet
+
+snippet \[ "Display math" A
+\[
+    $1
+\]
+endsnippet
+
+snippet beg "begin{} / end{}"
+\\begin{$1}
+	$0
+\\end{$1}
+endsnippet
+
+snippet ( "(" A
+(${1:})$0
+endsnippet
+
+snippet [ "[" A
+[${1:}]$0
+endsnippet
+
+snippet { "{" A
+{${1:}}$0
+endsnippet
+
+snippet lr( "left( right)" iA
+\left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+snippet lr| "left| right|" iA
+\left| ${1:${VISUAL}} \right| $0
+endsnippet
+
+snippet lr[ "left[ right]" iA
+\left[ ${1:${VISUAL}} \right] $0
+endsnippet
+
+snippet lr{ "left\{ right\}" iA
+\left\\{ ${1:${VISUAL}} \right\\} $0
+endsnippet
+
+priority 100
+snippet ... "dots" iA
+\dots
+endsnippet
+
+snippet vec2 "Matrix with 2 rows" iA
+\left[\begin{array}
+    ${1} \\\
+    ${2}
+\end{array}\right]
+endsnippet
+
+snippet vec3 "Matrix with 3 rows" iA
+\left[\begin{array}
+    ${1} \\\
+    ${2} \\\
+    ${3}
+\end{array}\right]
+endsnippet
+
+snippet sum "sum" w
+\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+endsnippet
+
+snippet vec4 "Matrix with 4 rows" iA
+\left[\begin{array}
+    ${1} \\\
+    ${2} \\\
+    ${3} \\\
+    ${4}
+\end{array}\right]
+endsnippet
+
+
+snippet `\b([a-zA-Z])-hat\b` "hat" A
+\\hat{${1}}
+endsnippet
+
+snippet `\b([a-zA-Z])cal\b` "cal" A
+\\mathcal{${1}}
+endsnippet
+
+snippet `([A-Z])#` "bb" A
+\\mathbb{${1}}
+endsnippet
+
+snippet mk "inline math" wA
+$$1$$2
+endsnippet
+
+snippet dm "Math" wA
+\[
+$1
+.\] $0
+endsnippet
+
+priority 10
+snippet "hat" "hat" ri
+\widehat{$1}$0
+endsnippet
+
+snippet aa "Alpha" wi
+\\alpha
+endsnippet
+
+snippet bb "Beta" wi
+\\beta
+endsnippet
+
+snippet gg "Gamma" wi
+\\gamma
+endsnippet
+
+snippet dd "Delta" wi
+\\delta
+endsnippet
+
+snippet ee "Epsilon" wi
+\\epsilon
+endsnippet
+
+snippet zz "Zeta" wi
+\\zeta
+endsnippet
+
+snippet hh "Eta" wi
+\\eta
+endsnippet
+
+snippet tt "Theta" wi
+\\theta
+endsnippet
+
+snippet kk "Kappa" wi
+\\kappa
+endsnippet
+
+snippet ll "Lambda" wi
+\\lambda
+endsnippet
+
+snippet mm "Mu" wi
+\\mu
+endsnippet
+
+snippet nn "Nu" wi
+\\nu
+endsnippet
+
+snippet xx "Xi" wi
+\\xi
+endsnippet
+
+snippet pp "Pi" wi
+\\pi
+endsnippet
+
+snippet rr "Rho" wi
+\\rho
+endsnippet
+
+snippet ss "Sigma" wi
+\\sigma
+endsnippet
+
+snippet oo "Omega" wi
+\\omega
+endsnippet
+
+snippet GG "Gamma" wi
+\\Gamma
+endsnippet
+
+snippet DD "Delta" wi
+\\Delta
+endsnippet
+
+snippet TT "Theta" wi
+\\Theta
+endsnippet
+
+snippet LL "Lambda" wi
+\\Lambda
+endsnippet
+
+snippet XX "Xi" wi
+\\Xi
+endsnippet
+
+snippet PP "Pi" wi
+\\Pi
+endsnippet
+
+snippet SS "Sigma" wi
+\\Sigma
+endsnippet
+
+snippet OO "Omega" wi
+\\Omega
+endsnippet
+
+snippet @@ "infinity" A
+\\infty
+endsnippet
+
+snippet => "implies" A
+\\Rightarrow
+endsnippet
+
+snippet =< "implied by" A
+\\Leftarrow
+endsnippet
+
+snippet <= "leq" A
+\\leq
+endsnippet
+
+snippet >= "geq" A
+\\geq
+endsnippet
+
+
