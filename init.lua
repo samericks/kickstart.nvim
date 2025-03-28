@@ -258,7 +258,8 @@ require('lazy').setup({
   --    require('gitsigns').setup({ ... })
   --
   -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+
+  { -- Adds git-related signs and highlights modified lines
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -268,6 +269,10 @@ require('lazy').setup({
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
       },
+      signcolumn = true, -- Show signs in the number column
+      numhl = true, -- Highlight the number column
+      linehl = true, -- Highlight the actual lines
+      word_diff = false, -- Disable word diff highlights
     },
   },
 
@@ -860,7 +865,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'rose-pine'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'

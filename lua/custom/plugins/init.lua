@@ -28,21 +28,15 @@ return {
     end,
   },
 
-  {
-    'neomake/neomake',
-  },
+  { 'neomake/neomake' },
 
-  {
-    'SirVer/ultisnips',
-  },
+  { 'rose-pine/neovim', name = 'rose-pine' },
 
-  {
-    'honza/vim-snippets',
-  },
+  { 'SirVer/ultisnips' },
 
-  {
-    'tpope/vim-fugitive',
-  },
+  { 'honza/vim-snippets' },
+
+  { 'tpope/vim-fugitive' },
 
   {
     'hrsh7th/nvim-cmp',
