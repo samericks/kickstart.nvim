@@ -17,6 +17,8 @@ return {
       --     '-outdir=output', -- Pass the output directory option to latexmk
       --   },
       -- }
+      -- vim.opt.conceallevel = 1
+      -- vim.g.tex_conceal = 'abdmg'
       vim.opt.formatoptions:append 't'
       vim.opt.formatoptions:append 'l'
       vim.g.vimtex_fold_enabled = 0

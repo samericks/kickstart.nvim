@@ -98,43 +98,44 @@ snippet ... "dots" iA
 endsnippet
 
 snippet vec2 "Matrix with 2 rows" iA
-\left[\begin{array}
+\begin{bmatrix}
     ${1} \\\
     ${2}
-\end{array}\right]
+\end{bmatrix} $0
 endsnippet
 
 snippet vec3 "Matrix with 3 rows" iA
-\left[\begin{array}
+\begin{bmatrix}
     ${1} \\\
     ${2} \\\
     ${3}
-\end{array}\right]
-endsnippet
-
-snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+\end{bmatrix} $0
 endsnippet
 
 snippet vec4 "Matrix with 4 rows" iA
-\left[\begin{array}
+\begin{bmatrix}
     ${1} \\\
     ${2} \\\
     ${3} \\\
     ${4}
-\end{array}\right]
+\end{bmatrix} $0
 endsnippet
 
+snippet sum "sum" w
+\sum_{${1:i=1}}^{${2:\infty}} ${3:a_n z^n}
+endsnippet
 
-snippet `\b([a-zA-Z])-hat\b` "hat" A
+context "math()"
+snippet `\b([a-zA-Z])hat\b` "hat" w
 \\hat{${1}}
 endsnippet
 
-snippet `\b([a-zA-Z])cal\b` "cal" A
-\\mathcal{${1}}
+#context "math()"
+snippet cal "mathcal" w
+\\mathcal{$1}
 endsnippet
 
-snippet `([A-Z])#` "bb" A
+snippet `([A-Z])#` "bb" rA
 \\mathbb{${1}}
 endsnippet
 
@@ -144,8 +145,8 @@ endsnippet
 
 snippet dm "Math" wA
 \[
-$1
-.\] $0
+	$1
+\] $0
 endsnippet
 
 priority 10
